@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick and Secure Note - Fast Note-Taking Chrome Extension</title>
+    <meta name="description" content="Lightning-fast, secure note-taking extension for Chrome. Save, search, and backup notes instantly with PIN protection.">
+    <meta name="keywords" content="chrome extension, notes, note-taking, secure notes, privacy">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-primary { @apply px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-purple-800 transition transform hover:scale-105; }
+        .feature-card { @apply p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200 hover:border-purple-300 transition; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">✓</span>
+                </div>
+                <span class="font-bold text-lg">Quick Note</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm">
+                <a href="#features" class="hover:text-purple-600 transition">Features</a>
+                <a href="#how-it-works" class="hover:text-purple-600 transition">How It Works</a>
+                <a href="#download" class="hover:text-purple-600 transition">Download</a>
+            </div>
+            <a href="https://chromewebstore.google.com" target="_blank" class="btn-primary text-sm">Install Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl sm:text-6xl font-bold mb-6 gradient-text">
+                Notes. Lightning Fast.
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                Stop wasting time with slow note apps. Save, search, and backup your notes instantly. 
+                <span class="font-semibold">Zero bloat. Maximum security.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="https://chromewebstore.google.com" target="_blank" class="btn-primary">Install on Chrome</a>
+                <button onclick="document.getElementById('features').scrollIntoView()" class="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-50 transition">
+                    Learn More
+                </button>
+            </div>
+            <div class="bg-purple-50 rounded-xl p-8 border border-purple-200">
+                <div class="flex items-center justify-center gap-4 text-sm text-gray-700">
+                    <span>⚡ Opens in &lt;100ms</span>
+                    <span>•</span>
+                    <span>🔒 Encrypted locally</span>
+                    <span>•</span>
+                    <span>⚙️ No setup needed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4">Why Quick and Secure Note?</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+                Built for people who value speed and privacy over unnecessary complexity.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">⚡</div>
+                    <h3 class="font-bold text-lg mb-2">Ultra Fast</h3>
+                    <p class="text-sm text-gray-600">Opens instantly. Saves instantly. No waiting, no lag.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">🔒</div>
+                    <h3 class="font-bold text-lg mb-2">Secure by Design</h3>
+                    <p class="text-sm text-gray-600">PIN-protected. All data stays on your device. Period.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">🔍</div>
+                    <h3 class="font-bold text-lg mb-2">Instant Search</h3>
+                    <p class="text-sm text-gray-600">Find any note in milliseconds. Real-time filtering.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">📦</div>
+                    <h3 class="font-bold text-lg mb-2">Easy Backup</h3>
+                    <p class="text-sm text-gray-600">Export as CSV. Restore anytime. Your data, your control.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">⌨️</div>
+                    <h3 class="font-bold text-lg mb-2">Hotkeys</h3>
+                    <p class="text-sm text-gray-600">Customize shortcuts. Save notes without leaving your task.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">📄</div>
+                    <h3 class="font-bold text-lg mb-2">Plain Text</h3>
+                    <p class="text-sm text-gray-600">No fancy formatting bloat. Just your thoughts, clearly.</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">🚀</div>
+                    <h3 class="font-bold text-lg mb-2">Minimal Design</h3>
+                    <p class="text-sm text-gray-600">Clean UI. Keyboard-friendly. No learning curve.</p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">📱</div>
+                    <h3 class="font-bold text-lg mb-2">Lightweight</h3>
+                    <p class="text-sm text-gray-600">Only 25KB. Doesn't slow down your browser.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">How It Works</h2>
+            
+            <div class="space-y-8">
+                <!-- Step 1 -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">Install (30 seconds)</h3>
+                        <p class="text-gray-600">Add the extension from Chrome Web Store. No account needed, no permissions requested beyond what's necessary.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">Set PIN (1 minute)</h3>
+                        <p class="text-gray-600">Create a simple PIN for protection. Your notes are encrypted locally and stay on your device.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">Start Saving (Right now!)</h3>
+                        <p class="text-gray-600">Use the extension icon or hotkey. Type your note. It's saved automatically. Search or backup anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Quick Note vs. Others</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-gray-300">
+                            <th class="text-left py-3 px-4 font-bold">Feature</th>
+                            <th class="text-center py-3 px-4">Quick Note</th>
+                            <th class="text-center py-3 px-4">Evernote</th>
+                            <th class="text-center py-3 px-4">OneNote</th>
+                            <th class="text-center py-3 px-4">Notion</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-3 px-4">Lightning Fast</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Local Storage</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Zero Setup</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Lightweight (&lt;30KB)</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Offline Access</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">✓</td>
+                            <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Rich Formatting</td>
+                            <td class="text-center">-</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="download" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-purple-700">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-4xl font-bold mb-6">Ready to save time?</h2>
+            <p class="text-xl mb-8 opacity-90">Join hundreds of developers and professionals who've ditched the bloat.</p>
+            <a href="https://chromewebstore.google.com" target="_blank" class="inline-block px-8 py-4 bg-white text-purple-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition transform hover:scale-105">
+                Install Quick Note Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-white mb-4">Quick Note</h3>
+                    <p class="text-sm">Fast. Secure. Simple.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Links</h4>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="https://chromewebstore.google.com" class="hover:text-white transition">Chrome Store</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Legal</h4>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contact</h4>
+                    <p class="text-sm">support@quicknote.dev</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; 2026 Quick Note. Built with ❤️ for speed.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
