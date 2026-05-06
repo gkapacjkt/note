@@ -6,12 +6,14 @@
     <title>Quick and Secure Note - Fast Note-Taking Chrome Extension</title>
     <meta name="description" content="Lightning-fast, secure note-taking extension for Chrome. Save, search, and backup notes instantly with PIN protection.">
     <meta name="keywords" content="chrome extension, notes, note-taking, secure notes, privacy">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
         .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-primary { @apply px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-purple-800 transition transform hover:scale-105; }
-        .feature-card { @apply p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200 hover:border-purple-300 transition; }
+        .btn-primary { display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(to right, #7c3aed, #6d28d9); color: #fff; border-radius: 0.5rem; font-weight: 600; transition: all 0.2s; }
+        .btn-primary:hover { background: linear-gradient(to right, #6d28d9, #5b21b6); transform: scale(1.05); }
+        .feature-card { padding: 1.5rem; background: linear-gradient(to bottom right, #f9fafb, #f3f4f6); border-radius: 0.5rem; border: 1px solid #e5e7eb; transition: border-color 0.2s; }
+        .feature-card:hover { border-color: #c4b5fd; }
     </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -29,7 +31,7 @@
                 <a href="#how-it-works" class="hover:text-purple-600 transition">How It Works</a>
                 <a href="#download" class="hover:text-purple-600 transition">Download</a>
             </div>
-            <a href="https://chromewebstore.google.com" target="_blank" class="btn-primary text-sm">Install Now</a>
+            <a href="https://chromewebstore.google.com/detail/eelncapjcglohlgpljapldmfjgddhknj?utm_source=item-share-cb" target="_blank" class="btn-primary text-sm">Install Now</a>
         </div>
     </nav>
 
@@ -44,7 +46,7 @@
                 <span class="font-semibold">Zero bloat. Maximum security.</span>
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <a href="https://chromewebstore.google.com" target="_blank" class="btn-primary">Install on Chrome</a>
+                <a href="https://chromewebstore.google.com/detail/eelncapjcglohlgpljapldmfjgddhknj?utm_source=item-share-cb" target="_blank" class="btn-primary">Install on Chrome</a>
                 <button onclick="document.getElementById('features').scrollIntoView()" class="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-50 transition">
                     Learn More
                 </button>
@@ -235,7 +237,7 @@
         <div class="max-w-4xl mx-auto text-center text-white">
             <h2 class="text-4xl font-bold mb-6">Ready to save time?</h2>
             <p class="text-xl mb-8 opacity-90">Join hundreds of developers and professionals who've ditched the bloat.</p>
-            <a href="https://chromewebstore.google.com" target="_blank" class="inline-block px-8 py-4 bg-white text-purple-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition transform hover:scale-105">
+            <a href="https://chromewebstore.google.com/detail/eelncapjcglohlgpljapldmfjgddhknj?utm_source=item-share-cb" target="_blank" class="inline-block px-8 py-4 bg-white text-purple-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition transform hover:scale-105">
                 Install Quick Note Now
             </a>
         </div>
@@ -254,7 +256,7 @@
                     <ul class="text-sm space-y-2">
                         <li><a href="#features" class="hover:text-white transition">Features</a></li>
                         <li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
-                        <li><a href="https://chromewebstore.google.com" class="hover:text-white transition">Chrome Store</a></li>
+                        <li><a href="https://chromewebstore.google.com/detail/eelncapjcglohlgpljapldmfjgddhknj?utm_source=item-share-cb" class="hover:text-white transition">Chrome Store</a></li>
                     </ul>
                 </div>
                 <div>
@@ -266,7 +268,7 @@
                 </div>
                 <div>
                     <h4 class="font-bold text-white mb-4">Contact</h4>
-                    <p class="text-sm">support@quicknote.dev</p>
+                    <p class="text-sm">gkapacjkt@gmail.com</p>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-sm">
