@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick and Secure Note - Fast Note-Taking Chrome Extension</title>
-    <meta name="description" content="Lightning-fast, secure note-taking extension for Chrome. Save, search, and backup notes instantly with PIN protection.">
-    <meta name="keywords" content="chrome extension, notes, note-taking, secure notes, privacy">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Quick and Secure Note - Fast Note-Taking Chrome Extension with Web Clipper</title>
+    <meta name="description" content="Lightning-fast, AES-256 encrypted note-taking extension for Chrome. Web clipper, teleprompter, instant search, and encrypted backup. Right-click any text to save it as a note.">
+    <meta name="keywords" content="chrome extension, notes, note-taking, web clipper, highlight saver, secure notes, encrypted notes, AES-256, privacy, teleprompter">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
         .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-primary { display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(to right, #7c3aed, #6d28d9); color: #fff; border-radius: 0.5rem; font-weight: 600; transition: all 0.2s; }
-        .btn-primary:hover { background: linear-gradient(to right, #6d28d9, #5b21b6); transform: scale(1.05); }
-        .feature-card { padding: 1.5rem; background: linear-gradient(to bottom right, #f9fafb, #f3f4f6); border-radius: 0.5rem; border: 1px solid #e5e7eb; transition: border-color 0.2s; }
-        .feature-card:hover { border-color: #c4b5fd; }
+        .btn-primary { @apply px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-purple-800 transition transform hover:scale-105; }
+        .feature-card { @apply p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200 hover:border-purple-300 transition; }
     </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -28,36 +26,43 @@
             </div>
             <div class="hidden md:flex gap-8 text-sm">
                 <a href="#features" class="hover:text-purple-600 transition">Features</a>
+                <a href="#clipper" class="hover:text-purple-600 transition">Web Clipper</a>
+                <a href="#shortcuts" class="hover:text-purple-600 transition">Shortcuts</a>
                 <a href="#how-it-works" class="hover:text-purple-600 transition">How It Works</a>
                 <a href="#download" class="hover:text-purple-600 transition">Download</a>
             </div>
-            <a href="https://chromewebstore.google.com/detail/eelncapjcglohlgpljapldmfjgddhknj?utm_source=item-share-cb" target="_blank" class="btn-primary text-sm">Install Now</a>
+            <a href="https://chromewebstore.google.com" target="_blank" class="btn-primary text-sm">Install Now</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
         <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block px-3 py-1 mb-4 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold tracking-wide">
+                ✨ NEW in v2.0 — Web Clipper &amp; Highlight Saver
+            </div>
             <h1 class="text-5xl sm:text-6xl font-bold mb-6 gradient-text">
                 Notes. Lightning Fast.
             </h1>
             <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                Stop wasting time with slow note apps. Save, search, and backup your notes instantly. 
+                Right-click any text on the web to save it instantly. Encrypted, searchable, yours forever.
                 <span class="font-semibold">Zero bloat. Maximum security.</span>
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <a href="https://chromewebstore.google.com/detail/eelncapjcglohlgpljapldmfjgddhknj?utm_source=item-share-cb" target="_blank" class="btn-primary">Install on Chrome</a>
+                <a href="https://chromewebstore.google.com" target="_blank" class="btn-primary">Install on Chrome</a>
                 <button onclick="document.getElementById('features').scrollIntoView()" class="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-50 transition">
                     Learn More
                 </button>
             </div>
             <div class="bg-purple-50 rounded-xl p-8 border border-purple-200">
-                <div class="flex items-center justify-center gap-4 text-sm text-gray-700">
+                <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-gray-700">
                     <span>⚡ Opens in &lt;100ms</span>
                     <span>•</span>
-                    <span>🔒 Encrypted locally</span>
+                    <span>🔐 AES-256 encrypted</span>
                     <span>•</span>
-                    <span>⚙️ No setup needed</span>
+                    <span>✂️ Right-click web clipper</span>
+                    <span>•</span>
+                    <span>🎬 Teleprompter mode</span>
                 </div>
             </div>
         </div>
@@ -72,62 +77,268 @@
             </p>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Feature 1 -->
+                <!-- Feature: Web Clipper (NEW) -->
+                <div class="feature-card relative">
+                    <span class="absolute top-3 right-3 px-2 py-0.5 bg-purple-600 text-white text-[10px] font-bold rounded-full">NEW</span>
+                    <div class="text-3xl mb-3">✂️</div>
+                    <h3 class="font-bold text-lg mb-2">Web Clipper</h3>
+                    <p class="text-sm text-gray-600">Right-click any text, page, link, or image to save it as a note instantly.</p>
+                </div>
+
+                <!-- Feature: Ultra Fast -->
                 <div class="feature-card">
                     <div class="text-3xl mb-3">⚡</div>
                     <h3 class="font-bold text-lg mb-2">Ultra Fast</h3>
                     <p class="text-sm text-gray-600">Opens instantly. Saves instantly. No waiting, no lag.</p>
                 </div>
 
-                <!-- Feature 2 -->
+                <!-- Feature: Secure (corrected: master password, not PIN) -->
                 <div class="feature-card">
-                    <div class="text-3xl mb-3">🔒</div>
-                    <h3 class="font-bold text-lg mb-2">Secure by Design</h3>
-                    <p class="text-sm text-gray-600">PIN-protected. All data stays on your device. Period.</p>
+                    <div class="text-3xl mb-3">🔐</div>
+                    <h3 class="font-bold text-lg mb-2">AES-256 Encrypted</h3>
+                    <p class="text-sm text-gray-600">Master password protection with PBKDF2. Data never leaves your device.</p>
                 </div>
 
-                <!-- Feature 3 -->
+                <!-- Feature: Instant Search -->
                 <div class="feature-card">
                     <div class="text-3xl mb-3">🔍</div>
                     <h3 class="font-bold text-lg mb-2">Instant Search</h3>
-                    <p class="text-sm text-gray-600">Find any note in milliseconds. Real-time filtering.</p>
+                    <p class="text-sm text-gray-600">Find any note in milliseconds. Real-time filtering with match highlighting.</p>
                 </div>
 
-                <!-- Feature 4 -->
+                <!-- Feature: Teleprompter -->
                 <div class="feature-card">
-                    <div class="text-3xl mb-3">📦</div>
-                    <h3 class="font-bold text-lg mb-2">Easy Backup</h3>
-                    <p class="text-sm text-gray-600">Export as CSV. Restore anytime. Your data, your control.</p>
+                    <div class="text-3xl mb-3">🎬</div>
+                    <h3 class="font-bold text-lg mb-2">Prompter Mode</h3>
+                    <p class="text-sm text-gray-600">Use any note as a teleprompter. Adjustable speed and font size.</p>
                 </div>
 
-                <!-- Feature 5 -->
+                <!-- Feature: Encrypted Backup (corrected from CSV) -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">💾</div>
+                    <h3 class="font-bold text-lg mb-2">Encrypted Backup</h3>
+                    <p class="text-sm text-gray-600">Export as password-protected file. Restore anytime. Your data, your control.</p>
+                </div>
+
+                <!-- Feature: Hotkeys -->
                 <div class="feature-card">
                     <div class="text-3xl mb-3">⌨️</div>
-                    <h3 class="font-bold text-lg mb-2">Hotkeys</h3>
-                    <p class="text-sm text-gray-600">Customize shortcuts. Save notes without leaving your task.</p>
+                    <h3 class="font-bold text-lg mb-2">Keyboard Shortcuts</h3>
+                    <p class="text-sm text-gray-600">Alt+Shift+N to open. Alt+Shift+S to clip a highlight. Zero mouse needed.</p>
                 </div>
 
-                <!-- Feature 6 -->
+                <!-- Feature: Rich Text (corrected from "plain text") -->
                 <div class="feature-card">
-                    <div class="text-3xl mb-3">📄</div>
-                    <h3 class="font-bold text-lg mb-2">Plain Text</h3>
-                    <p class="text-sm text-gray-600">No fancy formatting bloat. Just your thoughts, clearly.</p>
+                    <div class="text-3xl mb-3">✍️</div>
+                    <h3 class="font-bold text-lg mb-2">Rich Formatting</h3>
+                    <p class="text-sm text-gray-600">Bold, italic, highlight, lists, alignment — without the bloat.</p>
                 </div>
 
-                <!-- Feature 7 -->
+                <!-- Feature: Pin Notes -->
                 <div class="feature-card">
-                    <div class="text-3xl mb-3">🚀</div>
-                    <h3 class="font-bold text-lg mb-2">Minimal Design</h3>
-                    <p class="text-sm text-gray-600">Clean UI. Keyboard-friendly. No learning curve.</p>
+                    <div class="text-3xl mb-3">📌</div>
+                    <h3 class="font-bold text-lg mb-2">Pin Important Notes</h3>
+                    <p class="text-sm text-gray-600">Keep essential notes at the top. Auto-sorted by recency below.</p>
                 </div>
 
-                <!-- Feature 8 -->
+                <!-- Feature: Lightweight -->
                 <div class="feature-card">
-                    <div class="text-3xl mb-3">📱</div>
+                    <div class="text-3xl mb-3">🪶</div>
                     <h3 class="font-bold text-lg mb-2">Lightweight</h3>
-                    <p class="text-sm text-gray-600">Only 25KB. Doesn't slow down your browser.</p>
+                    <p class="text-sm text-gray-600">Under 100KB total. Zero external dependencies. Won't slow your browser.</p>
+                </div>
+
+                <!-- Feature: Sensitive Mask -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">👁️</div>
+                    <h3 class="font-bold text-lg mb-2">Sensitive Masking</h3>
+                    <p class="text-sm text-gray-600">Mark notes as sensitive — content shown as dots in the list view.</p>
+                </div>
+
+                <!-- Feature: Privacy First -->
+                <div class="feature-card">
+                    <div class="text-3xl mb-3">🛡️</div>
+                    <h3 class="font-bold text-lg mb-2">100% Local</h3>
+                    <p class="text-sm text-gray-600">No telemetry. No cloud. No network requests. Ever.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Web Clipper Section (NEW) -->
+    <section id="clipper" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-purple-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="inline-block px-3 py-1 mb-3 bg-purple-600 text-white rounded-full text-xs font-bold">NEW IN v2.0</span>
+                <h2 class="text-4xl font-bold mb-4">Web Clipper &amp; Highlight Saver</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Stop copying, pasting, and switching tabs. Right-click any text on any webpage and save it as a note — with the source URL automatically attached.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <!-- Left: Context menu mockup -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+                    <div class="text-xs text-gray-500 mb-3 font-mono">Right-click on selected text →</div>
+                    <div class="bg-gray-50 border border-gray-300 rounded-lg p-2 text-sm font-mono">
+                        <div class="px-3 py-2 hover:bg-gray-100 rounded text-gray-400">Copy</div>
+                        <div class="px-3 py-2 hover:bg-gray-100 rounded text-gray-400">Search Google for "…"</div>
+                        <div class="border-t my-1"></div>
+                        <div class="px-3 py-2 bg-purple-50 rounded text-purple-700 font-semibold">📝 Quick and Secure Note ›</div>
+                        <div class="ml-4 mt-1 bg-white border border-gray-200 rounded-lg p-1 shadow-sm">
+                            <div class="px-3 py-1.5 hover:bg-purple-50 rounded text-gray-700">Save selection as note</div>
+                            <div class="px-3 py-1.5 hover:bg-purple-50 rounded text-gray-700">Save selection as sensitive note 🔒</div>
+                            <div class="px-3 py-1.5 hover:bg-purple-50 rounded text-gray-700">Save page (title + URL) as note</div>
+                            <div class="px-3 py-1.5 hover:bg-purple-50 rounded text-gray-700">Save link as note</div>
+                            <div class="px-3 py-1.5 hover:bg-purple-50 rounded text-gray-700">Save image URL as note</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Bullet points -->
+                <div class="space-y-5">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center text-lg">📝</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Save any selection</h4>
+                            <p class="text-sm text-gray-600">Highlight text on any page, right-click, save. Done in under a second.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center text-lg">🔗</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Automatic source attribution</h4>
+                            <p class="text-sm text-gray-600">Page title, URL, and timestamp are appended automatically. Configurable.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center text-lg">🔒</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Clip directly as sensitive</h4>
+                            <p class="text-sm text-gray-600">Save passwords, API keys, or private info straight into an encrypted note.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center text-lg">🏷️</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Auto-tagged &amp; badged</h4>
+                            <p class="text-sm text-gray-600">Clipped notes get a CLIP badge in the list, and the extension icon shows a counter.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center text-lg">⌨️</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Or skip the menu entirely</h4>
+                            <p class="text-sm text-gray-600">Press <kbd class="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded text-xs">Alt+Shift+S</kbd> after selecting text. That's it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keyboard Shortcuts Section (NEW) -->
+    <section id="shortcuts" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Keyboard Shortcuts</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Built for IT pros, writers, and power users. Skip the mouse — every action has a key.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Global shortcuts -->
+                <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                        Global (anywhere in Chrome)
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-700">Open the popup</span>
+                            <span class="font-mono">
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Alt</kbd>
+                                <span class="mx-1 text-gray-400">+</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Shift</kbd>
+                                <span class="mx-1 text-gray-400">+</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">N</kbd>
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-700">Clip selected text as note</span>
+                            <span class="font-mono">
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Alt</kbd>
+                                <span class="mx-1 text-gray-400">+</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Shift</kbd>
+                                <span class="mx-1 text-gray-400">+</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">S</kbd>
+                            </span>
+                        </div>
+                        <div class="pt-2 text-xs text-gray-500">
+                            💡 Customize at <code class="px-1.5 py-0.5 bg-gray-100 rounded">chrome://extensions/shortcuts</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- In-popup shortcuts -->
+                <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+                        Inside the popup
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-700">New note</span>
+                            <span class="font-mono">
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Ctrl</kbd>
+                                <span class="mx-1 text-gray-400">+</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">N</kbd>
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-700">Save current note</span>
+                            <span class="font-mono">
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Ctrl</kbd>
+                                <span class="mx-1 text-gray-400">+</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">S</kbd>
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-700">Bold / Italic / Underline</span>
+                            <span class="font-mono">
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Ctrl</kbd>
+                                <span class="mx-1 text-gray-400">+</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">B</kbd>
+                                <span class="mx-1 text-gray-400">/</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">I</kbd>
+                                <span class="mx-1 text-gray-400">/</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">U</kbd>
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-700">Undo / Redo</span>
+                            <span class="font-mono">
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Ctrl</kbd>
+                                <span class="mx-1 text-gray-400">+</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Z</kbd>
+                                <span class="mx-1 text-gray-400">/</span>
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Y</kbd>
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-gray-700">Exit prompter mode</span>
+                            <span class="font-mono">
+                                <kbd class="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-xs">Esc</kbd>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-gray-500 mt-6">
+                On macOS, use <kbd class="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded">⌘</kbd> instead of <kbd class="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded">Ctrl</kbd>.
+            </p>
         </div>
     </section>
 
@@ -142,7 +353,7 @@
                     <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
                     <div>
                         <h3 class="font-bold text-xl mb-2">Install (30 seconds)</h3>
-                        <p class="text-gray-600">Add the extension from Chrome Web Store. No account needed, no permissions requested beyond what's necessary.</p>
+                        <p class="text-gray-600">Add the extension from Chrome Web Store. No account needed, no permissions beyond what's necessary for the web clipper to work.</p>
                     </div>
                 </div>
 
@@ -150,8 +361,8 @@
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
                     <div>
-                        <h3 class="font-bold text-xl mb-2">Set PIN (1 minute)</h3>
-                        <p class="text-gray-600">Create a simple PIN for protection. Your notes are encrypted locally and stay on your device.</p>
+                        <h3 class="font-bold text-xl mb-2">Set Master Password (optional, 1 minute)</h3>
+                        <p class="text-gray-600">Create a master password for AES-256 encryption — or skip it and use the extension unencrypted. Your call.</p>
                     </div>
                 </div>
 
@@ -159,8 +370,17 @@
                 <div class="flex gap-6">
                     <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
                     <div>
-                        <h3 class="font-bold text-xl mb-2">Start Saving (Right now!)</h3>
-                        <p class="text-gray-600">Use the extension icon or hotkey. Type your note. It's saved automatically. Search or backup anytime.</p>
+                        <h3 class="font-bold text-xl mb-2">Clip the web as you browse</h3>
+                        <p class="text-gray-600">See something useful? Highlight it, right-click, save. Or press <kbd class="px-1.5 py-0.5 bg-white border border-gray-300 rounded text-xs">Alt+Shift+S</kbd>. The page URL is attached automatically.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">4</div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">Search, organize, back up</h3>
+                        <p class="text-gray-600">Real-time search across all notes. Pin the important ones. Export an encrypted backup whenever you want.</p>
                     </div>
                 </div>
             </div>
@@ -192,7 +412,21 @@
                             <td class="text-center">-</td>
                         </tr>
                         <tr>
-                            <td class="py-3 px-4">Local Storage</td>
+                            <td class="py-3 px-4">Right-click Web Clipper</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center">-</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Local Storage Only</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">AES-256 Encryption</td>
                             <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
                             <td class="text-center">-</td>
                             <td class="text-center">-</td>
@@ -206,7 +440,7 @@
                             <td class="text-center">-</td>
                         </tr>
                         <tr>
-                            <td class="py-3 px-4">Lightweight (&lt;30KB)</td>
+                            <td class="py-3 px-4">Lightweight (&lt;100KB)</td>
                             <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
                             <td class="text-center">-</td>
                             <td class="text-center">-</td>
@@ -216,15 +450,22 @@
                             <td class="py-3 px-4">Offline Access</td>
                             <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
                             <td class="text-center">-</td>
-                            <td class="text-center">✓</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
                             <td class="text-center">-</td>
                         </tr>
                         <tr>
                             <td class="py-3 px-4">Rich Formatting</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Teleprompter Mode</td>
+                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
                             <td class="text-center">-</td>
-                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
-                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
-                            <td class="text-center"><span class="text-green-600 font-bold">✓</span></td>
+                            <td class="text-center">-</td>
+                            <td class="text-center">-</td>
                         </tr>
                     </tbody>
                 </table>
@@ -237,7 +478,7 @@
         <div class="max-w-4xl mx-auto text-center text-white">
             <h2 class="text-4xl font-bold mb-6">Ready to save time?</h2>
             <p class="text-xl mb-8 opacity-90">Join hundreds of developers and professionals who've ditched the bloat.</p>
-            <a href="https://chromewebstore.google.com/detail/eelncapjcglohlgpljapldmfjgddhknj?utm_source=item-share-cb" target="_blank" class="inline-block px-8 py-4 bg-white text-purple-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition transform hover:scale-105">
+            <a href="https://chromewebstore.google.com" target="_blank" class="inline-block px-8 py-4 bg-white text-purple-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition transform hover:scale-105">
                 Install Quick Note Now
             </a>
         </div>
@@ -255,8 +496,10 @@
                     <h4 class="font-bold text-white mb-4">Links</h4>
                     <ul class="text-sm space-y-2">
                         <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#clipper" class="hover:text-white transition">Web Clipper</a></li>
+                        <li><a href="#shortcuts" class="hover:text-white transition">Shortcuts</a></li>
                         <li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
-                        <li><a href="https://chromewebstore.google.com/detail/eelncapjcglohlgpljapldmfjgddhknj?utm_source=item-share-cb" class="hover:text-white transition">Chrome Store</a></li>
+                        <li><a href="https://chromewebstore.google.com" class="hover:text-white transition">Chrome Store</a></li>
                     </ul>
                 </div>
                 <div>
@@ -268,7 +511,7 @@
                 </div>
                 <div>
                     <h4 class="font-bold text-white mb-4">Contact</h4>
-                    <p class="text-sm">gkapacjkt@gmail.com</p>
+                    <p class="text-sm"><a href="mailto:gkapacjkt@gmail.com" class="hover:text-white transition">gkapacjkt@gmail.com</a></p>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-sm">
